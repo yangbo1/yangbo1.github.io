@@ -19,6 +19,6 @@ icon: heart
 * WeChat: yangbo467198215
 
 
-## Comments
+## 评论
 
 {% include comments.html %}

@@ -12,6 +12,6 @@ icon: bookmark
 
 暂无
 
-## Comments
+## 评论
 
 {% include comments.html %}
