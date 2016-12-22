@@ -13,6 +13,20 @@
     {% include backToTop.html %}
     <script src="{{ " /js/main.js " | prepend: site.baseurl }}" charset="utf-8"></script>
     <script src="{{ " /js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script>
+
+	<!--下雪特效-->
+	<script>
+	$(document).ready( function(){
+		$.fn.snow({ 
+			minSize: 5, 
+			maxSize: 50, 
+			newOn: 1000
+		});
+	});
+	</script>
+
+	<script src="{{ "/js/jquery-1.7.1.min.js " | prepend: site.baseurl }}" charset="utf-8"></script>
+	<script src="{{ "/js/jquery.snow.min.js " | prepend: site.baseurl }}" charset="utf-8"></script>
   </body>
 
 </html>
