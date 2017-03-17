@@ -135,7 +135,7 @@ Mybatis通过xml或注解的方式将要执行的各种statement（statement、p
 
 ```
 ### PO类
-```
+```java
 package com.itheima.mybatis.po;
 
 /**
@@ -201,7 +201,7 @@ public class User {
 }
 ```
 ### 测试类
-```
+```java
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
@@ -274,7 +274,6 @@ public class MybatisTest {
     }
 }
 
-
 ```
 ****
 # Mapper代理方式
@@ -283,6 +282,7 @@ public class MybatisTest {
 
 
 * Mapper文件的namespace必须是接口的全路径。
+
 ```
 <mapper namespace="com.itheima.mybatis.mapper.UserMapper">
 ```
