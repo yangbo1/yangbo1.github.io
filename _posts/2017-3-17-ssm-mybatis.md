@@ -8,7 +8,7 @@ author: yangbo
 
 * content
 {:toc}
-mybatis学习笔记 ，
+mybatis学习笔记
 
 
 
