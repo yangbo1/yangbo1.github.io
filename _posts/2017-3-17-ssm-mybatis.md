@@ -281,15 +281,20 @@ public class MybatisTest {
 
 
 * Mapper文件的namespace必须是接口的全路径。
-  `<mapper namespace="com.itheima.mybatis.mapper.UserMapper">`
+```xml
+<mapper namespace="com.itheima.mybatis.mapper.UserMapper">
+
+```
 
 
 * 接口中的方法名称必须和mapper文件中的statementID一致。
 
 * 方法的参数必须和statement的参数类型parameterType一致。
   方法的返回值，必须和statement的返回类型一致resultType。
-  `User findUserById(int id);`
+```java
+User findUserById(int id);
 ```
+```xml
  <select id="findUserById" parameterType="int" resultType="com.itheima.mybatis.po.User">
         select * from user where id = #{id}
  </select>
@@ -323,7 +328,7 @@ public class UserMapperTest {
 
 ## 使用包装pojo作为查询条件取对象中的属性值是使用OGNL来获得的。
 ### POJO类
-```
+```java
 package com.itheima.mybatis.po;
 
 public class QueryVo {
@@ -353,11 +358,11 @@ public class QueryVo {
 
 ```
 ### Mapper接口
-```
+```xml
 List<User> findUserByQueryVo(QueryVo queryVo);
 ```
 ### 测试类
-```
+```java
  //根据QueryVo查询用户列表
     @Test
     public void testFindUserByQueryVo() throws Exception {
@@ -373,7 +378,7 @@ List<User> findUserByQueryVo(QueryVo queryVo);
     }
 ```
 ## 返回Map类型
-```
+```xml
 <!--
 		type:返回结果的数据类型
 		id：resultMap的id
@@ -402,11 +407,11 @@ List<User> findUserByQueryVo(QueryVo queryVo);
     </select>
 ```
 ### Mapper接口
-```
+```java
 List<User> findUserResultMap(String username);
 ```
 ### 测试类
-```
+```java
  @Test
     public void testFindUserResultMap () throws Exception {
         init();
@@ -418,7 +423,7 @@ List<User> findUserResultMap(String username);
 # 动态sql
 ## if标签
 **判断是否添加一些sql语句**
-```
+```xml
 <update id="updateUser" parameterType="com.itheima.mybatis.po.User">
         update user set
         <if test="username != null and username!=''">
@@ -432,7 +437,7 @@ List<User> findUserResultMap(String username);
 ```
 ## where标签
 **Where标签会自动添加where条件，如果如果标签内容部没有条件的话sql语句中就没有where关键字。如果条件中有多余的and 会自动去掉。**
-```
+```xml
 <where>
 	<if test="user.sex != null">
           and sex = #{user.sex}
@@ -443,7 +448,7 @@ List<User> findUserResultMap(String username);
 </where>
 ```
 ## foreach标签
-```
+```xml
 <if test="ids !=null">
             <!--
                 collection：集合属性
@@ -461,7 +466,7 @@ List<User> findUserResultMap(String username);
 **Sql标签就是声明一个sql片段，可以使用include标签引用。**
 * 多个查询都会用到的查询条件会提取出来。
 * 字段的列表提取出来。
-```
+```xml
 <sql id="fieldList">
         id,username ,sex,address ,age
 </sql>
