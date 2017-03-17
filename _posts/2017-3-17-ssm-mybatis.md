@@ -273,7 +273,6 @@ public class MybatisTest {
         sqlSession.close();
     }
 }
-
 ```
 ****
 # Mapper代理方式
@@ -282,18 +281,14 @@ public class MybatisTest {
 
 
 * Mapper文件的namespace必须是接口的全路径。
+  `<mapper namespace="com.itheima.mybatis.mapper.UserMapper">`
 
-```
-<mapper namespace="com.itheima.mybatis.mapper.UserMapper">
-```
 
 * 接口中的方法名称必须和mapper文件中的statementID一致。
 
 * 方法的参数必须和statement的参数类型parameterType一致。
   方法的返回值，必须和statement的返回类型一致resultType。
-```
-User findUserById(int id);
-```
+  `User findUserById(int id);`
 ```
  <select id="findUserById" parameterType="int" resultType="com.itheima.mybatis.po.User">
         select * from user where id = #{id}
