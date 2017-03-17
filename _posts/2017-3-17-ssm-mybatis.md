@@ -295,7 +295,7 @@ public class MybatisTest {
  </select>
 ```
 ## 测试
-```
+```java
 public class UserMapperTest {
     private SqlSessionFactory sessionFactory = null;
     private SqlSession sqlSession =null;
@@ -319,8 +319,8 @@ public class UserMapperTest {
     }
 
 }
-
 ```
+
 ## 使用包装pojo作为查询条件取对象中的属性值是使用OGNL来获得的。
 ### POJO类
 ```
