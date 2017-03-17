@@ -276,20 +276,20 @@ public class MybatisTest {
 ```
 ****
 # Mapper代理方式
-* 命名规范，习惯上接口的命名UserMapper.java(表名+mapper)，每个接口必须对应一个mapper文件，文件的文件名必须和接口的文件名一致（UserMapper.xml）。
+1命名规范，习惯上接口的命名UserMapper.java(表名+mapper)，每个接口必须对应一个mapper文件，文件的文件名必须和接口的文件名一致（UserMapper.xml）。
 
 
 
-* Mapper文件的namespace必须是接口的全路径。
+2Mapper文件的namespace必须是接口的全路径。
 ```xml
 <mapper namespace="com.itheima.mybatis.mapper.UserMapper">
 
 ```
 
 
-* 接口中的方法名称必须和mapper文件中的statementID一致。
+3接口中的方法名称必须和mapper文件中的statementID一致。
 
-* 方法的参数必须和statement的参数类型parameterType一致。
+4方法的参数必须和statement的参数类型parameterType一致。
   方法的返回值，必须和statement的返回类型一致resultType。
 ```java
 User findUserById(int id);
